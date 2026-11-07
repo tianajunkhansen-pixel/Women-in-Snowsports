@@ -1,0 +1,636 @@
+/* ---------- COLOUR PALETTE ---------- */
+
+    :root {
+        --cream: #F9F6F3;
+        --off-white: #FAF9F5;
+
+        --forest-green: #2B332F;
+        --dark-green: #36413C;
+
+        --sage: #7B8C84;
+        --light-sage: #B9C2BC;
+
+        --dusty-pink: #ECCABB;
+        --soft-pink: #F3DED5;
+
+        --grey: #5C605C;
+        --light-grey: #E5E3DF;
+
+        --white: #FFFFFF;
+    }
+
+
+/* ---------- GENERAL RESET ---------- */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--cream);
+        color: var(--forest-green);
+        line-height: 1.6;
+    }
+
+
+/* ---------- MAIN ---------- */
+
+    /* ---------- HEADINGS ---------- */
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--forest-green);
+            line-height: 1.2;
+            margin-bottom: 15px;
+            padding: 0 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+
+    /* ---------- PARAGRAPHS ---------- */
+
+        p {
+            color: var(--grey);
+            margin-bottom: 15px;
+            padding: 0 50px;
+        }
+
+
+    /* ---------- LINKS ---------- */
+
+        a {
+            color: var(--forest-green);
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--sage);
+        }
+
+
+/* ---------- HEADER ---------- */
+
+    header {
+        background-color: var(--cream);
+        border-bottom: 1px solid var(--light-sage);
+
+        display: flex;
+        align-items: center;
+
+        padding: 10px 5%;
+        min-height: 120px;
+
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+
+    /* ---------- LOGO ---------- */
+
+        header > a {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        header > a img {
+            width: 120px;
+            height: auto;
+            display: block;
+        }
+
+
+    /* ---------- BANNER ---------- */
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+    /* ---------- NAVIGATION ---------- */
+
+        nav {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 45px;
+        }
+
+        nav a {
+            color: var(--forest-green);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            padding: 10px;
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--sage);
+        }
+
+
+    /* ---------- DAY / NIGHT TOGGLE ---------- */
+
+        .theme-toggle {
+            position: fixed;
+            top: 15px;
+            right: 25px;
+        }
+
+        .theme-toggle button {
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background-color: var(--soft-pink);
+            color: var(--forest-green);
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .theme-toggle button:hover {
+            background-color: var(--dusty-pink);
+            transform: scale(1.1);
+        }
+
+
+/* ---------- NIGHT MODE ---------- */
+
+    body.night-mode {
+        --cream: #202522;
+        --off-white: #292E2B;
+
+        --forest-green: #E8E5DF;
+        --dark-green: #D5D2CC;
+
+        --sage: #9EAEA5;
+        --light-sage: #59645F;
+
+        --dusty-pink: #8F6F65;
+        --soft-pink: #393331;
+
+        --grey: #C5C5C0;
+        --light-grey: #454A47;
+
+        --white: #303532;
+
+        background-color: var(--cream);
+        color: var(--forest-green);
+    }
+
+
+/* ---------- RESORT MAP ---------- */
+    #map {
+        width: 100%;
+        height: 600px;
+        border-radius: 15px;
+    }
+
+    .popup {
+        width: 220px;
+    }
+
+    .popup h2 {
+        margin-top: 0;
+    }
+
+    .popup img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .popup p {
+        line-height: 1.5;
+    }
+
+    .popup a {
+        color: #0077b6;
+        font-weight: bold;
+    }
+
+/* ---------- MAP CONTROLS ---------- */
+
+    .map-controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .map-controls button {
+        padding: 12px 25px;
+        border: 1px solid var(--light-sage);
+        border-radius: 25px;
+
+        background-color: var(--white);
+        color: var(--forest-green);
+
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+    .map-controls button:hover {
+        background-color: var(--soft-pink);
+    }
+
+    .map-controls button.active {
+        background-color: var(--forest-green);
+        color: var(--white);
+    }
+
+
+/* ---------- HERO SECTION ---------- */
+
+    .hero {
+        min-height: 70vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 20px;
+
+        background-color: var(--soft-pink);
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        max-width: 900px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 650px;
+        margin: 0 auto 30px;
+    }
+
+
+/* ---------- BUTTONS ---------- */
+
+    .btn {
+        display: inline-block;
+
+        background-color: var(--forest-green);
+        color: var(--white);
+
+        padding: 12px 28px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+        letter-spacing: 0.5px;
+
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: var(--sage);
+        color: var(--white);
+
+        transform: translateY(-2px);
+    }
+
+
+/* ---------- SECONDARY ---------- */
+
+    .btn-secondary {
+        background-color: var(--dusty-pink);
+        color: var(--forest-green);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--forest-green);
+        color: var(--white);
+    }
+
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+    section {
+        padding: 70px 8%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+    /* ---------- SECTION HEADING ---------- */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+/* ---------- CARDS ---------- */
+
+    .card {
+        background-color: var(--white);
+
+        border: 1px solid var(--light-sage);
+        border-radius: 12px;
+
+        padding: 30px;
+
+        box-shadow: 0 5px 15px rgba(43, 51, 47, 0.08);
+
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 10px 25px rgba(43, 51, 47, 0.15);
+    }
+
+    .card h3 {
+        color: var(--forest-green);
+    }
+
+    .card p {
+        color: var(--grey);
+    }
+
+
+    /* ---------- CARD GRID ---------- */
+
+        .card-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+/* ---------- IMAGE SECTIONS ---------- */
+
+    .image-section {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px;
+
+        align-items: center;
+    }
+
+    .image-section img {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+
+/* ---------- QUOTE / FEATURE SECTION ---------- */
+
+    .feature {
+        background-color: var(--sage);
+
+        color: var(--white);
+
+        text-align: center;
+
+        padding: 70px 20px;
+    }
+
+    .feature h2 {
+        color: var(--white);
+    }
+
+    .feature p {
+        color: var(--white);
+
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+
+/* ---------- FORMS ---------- */
+
+    form {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    label {
+        display: block;
+
+        margin-bottom: 6px;
+
+        font-weight: bold;
+
+        color: var(--forest-green);
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+
+        padding: 12px 15px;
+
+        margin-bottom: 20px;
+
+        border: 1px solid var(--light-sage);
+
+        border-radius: 6px;
+
+        background-color: var(--white);
+
+        color: var(--forest-green);
+
+        font-family: inherit;
+
+        font-size: 1rem;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: none;
+
+        border-color: var(--sage);
+
+        box-shadow: 0 0 0 2px var(--soft-pink);
+    }
+
+    textarea {
+        min-height: 150px;
+
+        resize: vertical;
+    }
+
+
+/* ---------- FOOTER ---------- */
+
+    footer {
+        background-color: var(--forest-green);
+
+        color: var(--white);
+
+        text-align: center;
+
+        padding: 40px 20px;
+    }
+
+    footer p {
+        color: var(--light-sage);
+    }
+
+    footer a {
+        color: var(--white);
+    }
+
+    footer a:hover {
+        color: var(--dusty-pink);
+    }
+
+
+/* ---------- DECORATIVE ELEMENTS ---------- */
+
+    .divider {
+        width: 80px;
+
+        height: 3px;
+
+        background-color: var(--dusty-pink);
+
+        margin: 20px auto;
+    }
+
+    .highlight {
+        color: var(--sage);
+    }
+
+    .pink {
+        color: var(--dusty-pink);
+    }
+
+    .green {
+        color: var(--forest-green);
+    }
+
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+    /* ---------- TABLETS ---------- */
+
+        @media (max-width: 900px) {
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .image-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+        }
+
+
+    /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+        }
